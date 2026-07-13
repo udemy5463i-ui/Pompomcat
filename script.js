@@ -1,6 +1,6 @@
 
 const CA_LIVE = true;
-const CA_ADDRESS = "TBA";
+const CA_ADDRESS = "Coming Soon";
 
 const PUMPFUN_URL = `https://pump.fun/coin/${CA_ADDRESS}`;
 const DEXSCREENER_URL = `https://dexscreener.com/solana/${CA_ADDRESS}`;
