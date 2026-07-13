@@ -1,5 +1,5 @@
 
-const CA_LIVE = true;
+const CA_LIVE = false;
 const CA_ADDRESS = "TBA";
 
 const PUMPFUN_URL = `https://pump.fun/coin/${CA_ADDRESS}`;
