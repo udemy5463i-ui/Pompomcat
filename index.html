@@ -5,838 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>POMPOMCAT | The Solana's Fluffiest Cat</title>
+  <meta name="description" content="POMPOMCAT ($POMPOMCAT) — the fluffiest meme coin on Solana. No utility, just unlimited meows. Fair launch, zero tax, 100% community powered.">
+  <meta name="theme-color" content="#09090b">
+  <link rel="canonical" href="https://pompomcat.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="POMPOMCAT | The Solana's Fluffiest Cat">
+  <meta property="og:description" content="No utility. Just unlimited meows. The cutest, fluffiest meme coin on Solana.">
+  <meta property="og:image" content="./Src/Pompomcat_logo.png">
+  <meta property="og:url" content="https://pompomcat.io/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="POMPOMCAT | The Solana's Fluffiest Cat">
+  <meta name="twitter:description" content="No utility. Just unlimited meows. The cutest, fluffiest meme coin on Solana.">
+  <meta name="twitter:image" content="./Src/Pompomcat_logo.png">
+
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="shortcut icon" href="favicon/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
   <link rel="manifest" href="favicon/site.webmanifest">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comic+Neue:wght@400;700&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Comic Neue', cursive;
-      background: #09090b;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .header {
-      font-family: 'Press Start 2P', system-ui;
-      letter-spacing: 1px;
-    }
-
-    .subtext {
-      font-family: 'Comic Neue', cursive;
-      font-weight: 700;
-    }
-
-    .neon {
-      text-shadow: 0 0 15px #fb923c, 0 0 30px #f97316, 0 0 60px #ea580c;
-    }
-
-    .neon-soft {
-      text-shadow: 0 0 10px rgba(251, 146, 60, 0.6);
-    }
-
-    ::selection {
-      background: #f97316;
-      color: #000;
-    }
-
-    .wrap {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ---------- top bar ---------- */
-    .topbar {
-      background: #7c2d12;
-      padding: 12px 20px;
-      text-align: center;
-      font-size: 1.05rem;
-      color: #fed7aa;
-    }
-
-    /* ---------- nav ---------- */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #f97316;
-    }
-
-    .nav-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand .paw {
-      font-size: 2.6rem;
-    }
-
-    .brand h1 {
-      font-size: 1.5rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      font-size: 1rem;
-    }
-
-    .nav-links a {
-      opacity: 0.9;
-      transition: color .2s ease;
-    }
-
-    .nav-links a:hover {
-      color: #fb923c;
-    }
-
-    .btn-buy-nav {
-      background: #fff;
-      color: #000;
-      font-weight: 700;
-      padding: 12px 28px;
-      border-radius: 16px;
-      font-size: 1rem;
-      white-space: nowrap;
-      cursor: pointer;
-      border: none;
-      animation: wiggle 2.4s infinite;
-      font-family: 'Comic Neue', cursive;
-    }
-
-    .btn-buy-nav:hover {
-      background: #fb923c;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: #fb923c;
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-
-    @keyframes wiggle {
-
-      0%,
-      100% {
-        transform: rotate(-2deg);
-      }
-
-      50% {
-        transform: rotate(2deg);
-      }
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-14px);
-      }
-    }
-
-    @keyframes drift {
-
-      0%,
-      100% {
-        transform: translateY(0) rotate(0);
-      }
-
-      50% {
-        transform: translateY(-20px) rotate(6deg);
-      }
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* ---------- hero ---------- */
-    .hero {
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      padding: 28px 24px 70px;
-      background:
-        radial-gradient(circle at 20% 15%, #7c2d12, transparent 55%),
-        radial-gradient(circle at 85% 10%, #9a3412, transparent 45%),
-        linear-gradient(160deg, #1a0a00, #3d1400 40%, #7c2d12 90%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bg-drift {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .bg-drift span {
-      position: absolute;
-      opacity: 0.35;
-      animation: drift 9s ease-in-out infinite;
-    }
-
-    .hero-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(249, 115, 22, 0.5);
-      border-radius: 100px;
-      padding: 9px 20px;
-      font-size: 0.9rem;
-      color: #fdba74;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 .line1 {
-      display: block;
-      font-size: clamp(2.6rem, 7vw, 4.5rem);
-    }
-
-    .hero h1 .line2 {
-      display: block;
-      font-size: clamp(1.4rem, 4vw, 2.4rem);
-      color: #fdba74;
-      margin-top: 20px;
-    }
-
-    .hero-lead {
-      font-size: clamp(1.1rem, 2.4vw, 1.6rem);
-      color: #fed7aa;
-      margin: 20px auto 6px;
-      max-width: 640px;
-    }
-
-    .hero-slogan {
-      font-size: clamp(1rem, 2vw, 1.3rem);
-      color: #fb923c;
-      font-style: italic;
-      margin-bottom: 36px;
-    }
-
-    .video-frame {
-      max-width: 640px;
-      margin: 0 auto 46px;
-      border-radius: 28px;
-      overflow: hidden;
-      border: 8px solid #fb923c;
-      box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
-      animation: float 5s ease-in-out infinite;
-    }
-
-    .video-frame video {
-      width: 100%;
-      display: block;
-    }
-
-    .hero-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .live-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid #22c55e;
-      color: #4ade80;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
-      padding: 8px 18px;
-      border-radius: 999px;
-      margin-bottom: 16px;
-    }
-
-    .live-badge .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 8px #22c55e;
-      animation: pulseDot 1.4s infinite;
-    }
-
-    @keyframes pulseDot {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.35;
-      }
-    }
-
-    .ca-btn {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      justify-content: center;
-      margin: 0 auto 16px;
-      padding: 12px 22px;
-      max-width: 520px;
-      background: rgba(0, 0, 0, 0.35);
-      border: 1.5px dashed #f97316;
-      border-radius: 14px;
-      color: #fed7aa;
-      font-family: monospace;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: all .2s ease;
-      word-break: break-all;
-    }
-
-    .ca-btn:hover {
-      background: rgba(249, 115, 22, 0.12);
-      border-style: solid;
-    }
-
-    .ca-btn.copied {
-      border-color: #22c55e;
-      color: #4ade80;
-    }
-
-    .ca-btn i {
-      flex-shrink: 0;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #c2410c, #b91c1c);
-      font-size: clamp(1.2rem, 2.6vw, 1.7rem);
-      padding: 26px 48px;
-      border-radius: 26px;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      font-family: 'Comic Neue', cursive;
-      font-weight: 700;
-      animation: wiggle 2.4s infinite;
-      transition: transform .2s ease;
-    }
-
-    .btn-primary:hover {
-      transform: scale(1.08);
-    }
-
-    .btn-secondary {
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid #fb923c;
-      font-size: clamp(1rem, 2.2vw, 1.4rem);
-      padding: 24px 42px;
-      border-radius: 26px;
-      color: #fff;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      font-family: 'Comic Neue', cursive;
-      font-weight: 700;
-      transition: all .2s ease;
-    }
-
-    .btn-secondary:hover {
-      background: #fb923c;
-      color: #000;
-    }
-
-    .hero-ticker {
-      margin-top: 32px;
-      font-size: 0.9rem;
-      color: #fed7aa;
-    }
-
-    /* ---------- marquee ---------- */
-    .marquee-outer {
-      height: 72px;
-      overflow: hidden;
-      position: relative;
-      z-index: 2;
-    }
-
-    .marquee-wrap {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 140vw;
-      height: 300px;
-      background: linear-gradient(90deg, #7c2d12, #b91c1c, #7c2d12);
-      transform: translate(-50%, -50%) rotate(-1deg);
-    }
-
-    .marquee-level {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 60px;
-      white-space: nowrap;
-      width: max-content;
-      animation: marquee 24s linear infinite;
-    }
-
-    .marquee-track span {
-      font-family: 'Press Start 2P', system-ui;
-      font-size: 0.85rem;
-      color: #fff7ed;
-    }
-
-    /* ---------- sections ---------- */
-    section {
-      padding: 48px 24px;
-    }
-
-    .section-head {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 60px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      background: rgba(154, 52, 18, 0.35);
-      color: #fb923c;
-      font-size: 0.75rem;
-      padding: 7px 18px;
-      border-radius: 100px;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(1.8rem, 4.5vw, 3rem);
-    }
-
-    .section-head p {
-      color: #fed7aa;
-      margin-top: 16px;
-      font-size: 1.1rem;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: #18181b;
-      border: 1px solid rgba(249, 115, 22, 0.35);
-      border-radius: 26px;
-      padding: 34px 24px;
-      text-align: center;
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(249, 115, 22, 0.9);
-      box-shadow: 0 30px 50px -25px rgba(249, 115, 22, 0.45);
-    }
-
-    .card .icon {
-      font-size: 3.4rem;
-      margin-bottom: 16px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-      font-family: 'Comic Neue', cursive;
-      flex-shrink: 0;
-    }
-
-    .card p {
-      font-size: 0.92rem;
-      color: #fdba9c;
-      flex-grow: 1;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      margin: 0;
-    }
-
-    .tok-card {
-      background: #18181b;
-      border: 2px solid #fb923c;
-      border-radius: 26px;
-      padding: 34px 24px;
-      text-align: center;
-      transition: transform .25s ease;
-    }
-
-    .tok-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .tok-card .icon {
-      font-size: 3.4rem;
-      margin-bottom: 0px;
-    }
-
-    .tok-card .value {
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .tok-card .label {
-      color: #fdba74;
-      margin-top: 6px;
-    }
-
-    /* ---------- roadmap ---------- */
-    .roadmap-track {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-
-    .roadmap-track::before {
-      content: '';
-      position: absolute;
-      top: 44px;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: repeating-linear-gradient(90deg, #f97316 0 14px, transparent 14px 24px);
-      z-index: 0;
-    }
-
-    .road-stop {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
-
-    .road-badge {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 18px;
-      border-radius: 50%;
-      background: #000;
-      border: 4px solid #f97316;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.1rem;
-      overflow: hidden;
-    }
-
-    .road-stop h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-
-    .road-stop p {
-      font-size: 0.88rem;
-      color: #fdba9c;
-      padding: 0 6px;
-    }
-
-
-    /* ---------- community ---------- */
-    .comm-icon {
-      font-size: 2.6rem;
-      margin-bottom: 14px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .comm-link {
-      display: inline-block;
-      border: 2px solid #fb923c;
-      color: #fdba74;
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 9px 22px;
-      border-radius: 100px;
-      margin-top: 16px;
-      transition: all .25s ease;
-      flex-shrink: 0;
-    }
-
-    .comm-link:hover {
-      background: #fb923c;
-      color: #000;
-    }
-
-    /* ---------- final CTA ---------- */
-    .final-cta {
-      text-align: center;
-      background: linear-gradient(180deg, #000, #431407);
-      padding: 100px 24px;
-    }
-
-    .final-cta h2 {
-      font-size: clamp(1.8rem, 4.5vw, 3rem);
-      margin-bottom: 34px;
-    }
-
-    .btn-final {
-      background: #fff;
-      color: #000;
-      font-size: clamp(1.3rem, 3vw, 1.9rem);
-      font-weight: 700;
-      border-radius: 26px;
-      border: none;
-      cursor: pointer;
-      font-family: 'Comic Neue', cursive;
-      animation: wiggle 2.4s infinite;
-      transition: transform .2s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: clamp(16px, 3vw, 26px) clamp(24px, 5vw, 40px);
-    }
-
-    .btn-final img {
-      height: clamp(30px, 6vw, 60px);
-      width: clamp(30px, 6vw, 60px);
-    }
-
-    .btn-final:hover {
-      transform: scale(1.06);
-      background: #fb923c;
-    }
-
-    /* ---------- footer ---------- */
-    footer {
-      text-align: center;
-      padding: 60px 24px 44px;
-      color: #fed7aa;
-      background: linear-gradient(180deg, #431407, #000);
-      border-top: 1px solid #7c2d12;
-    }
-
-    .footer-brand {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-    }
-
-    .footer-tag {
-      font-style: italic;
-      color: #fb923c;
-      margin-bottom: 22px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 26px;
-      margin-bottom: 22px;
-      font-weight: 700;
-    }
-
-    .footer-links a:hover {
-      color: #fb923c;
-    }
-
-    .footer-fine {
-      font-size: 0.78rem;
-      opacity: 0.7;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
-    @media (max-width:980px) {
-      .nav-links {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .grid-4 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .roadmap-track {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 50px;
-      }
-
-      .roadmap-track::before {
-        display: none;
-      }
-    }
-
-    @media (max-width:480px) {
-      .topbar {
-        padding: 8px 12px;
-        font-size: 0.78rem;
-        line-height: 1.3;
-      }
-
-      .nav-inner {
-        padding: 12px 14px;
-        gap: 8px;
-      }
-
-      .brand {
-        gap: 6px;
-      }
-
-      .brand img {
-        height: 34px !important;
-        width: 34px !important;
-      }
-
-      .brand h1 {
-        font-size: 1.05rem;
-      }
-
-      .menu-toggle {
-        font-size: 1.5rem;
-        padding: 0 4px;
-      }
-
-      .btn-buy-nav {
-        padding: 9px 14px;
-        font-size: 0.78rem;
-        border-radius: 12px;
-      }
-
-      .final-cta {
-        padding: 60px 16px;
-      }
-    }
-
-    @media (max-width:560px) {
-
-      .grid-4,
-      .roadmap-track {
-        grid-template-columns: 1fr;
-      }
-
-      .roadmap-track {
-        row-gap: 56px;
-      }
-
-      .roadmap-track::before {
-        display: none;
-      }
-
-      .road-stop:not(:first-child)::after {
-        content: '';
-        position: absolute;
-        top: -56px;
-        left: 50%;
-        width: 3px;
-        height: 56px;
-        background: repeating-linear-gradient(180deg, #f97316 0 14px, transparent 14px 24px);
-        transform: translateX(-50%);
-        z-index: 0;
-      }
-
-      .hero-btns {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .btn-primary,
-      .btn-secondary {
-        width: 100%;
-        max-width: 300px;
-        font-size: 1.05rem;
-        padding: 16px 28px;
-        border-radius: 18px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -865,7 +55,7 @@
     </div>
   </nav>
 
-  <!-- ================= HERO ================= -->
+  
   <section class="hero" id="about">
     <div class="bg-drift" id="bgDrift"></div>
     <div class="hero-inner">
@@ -912,7 +102,7 @@
     </div>
   </div>
 
-  <!-- ================= WHY ================= -->
+  
   <section>
     <div class="section-head">
       <span class="eyebrow subtext">THE PITCH</span>
@@ -921,26 +111,26 @@
     </div>
     <div class="grid-4">
       <div class="card">
-        <div class="icon"><img src="./Src/Zero_braincells.png" alt="Zero_braincells"
+        <div class="icon"><img src="./Src/Zero_braincells.png" alt="Zero_braincells" loading="lazy"
             style="height:80px; width:80px; object-fit:contain; margin:0 auto; display:block;"></div>
         <h3>Zero Braincells</h3>
         <p class="subtext">No whitepaper. No logic. Just vibes and unwavering conviction.</p>
       </div>
       <div class="card">
-        <div class="icon"><img src="./Src/Maximum_fluff.png" alt="Maximum_fluff"
+        <div class="icon"><img src="./Src/Maximum_fluff.png" alt="Maximum_fluff" loading="lazy"
             style="height:80px; width:80px; object-fit:contain; margin:0 auto; display:block;"></div>
 
         <h3>Maximum Fluff</h3>
         <p class="subtext">Scientifically the fluffiest token on the blockchain. Don't fact check that.</p>
       </div>
       <div class="card">
-        <div class="icon"><img src="./Src/Community_powered.png" alt="Community_powered"
+        <div class="icon"><img src="./Src/Community_powered.png" alt="Community_powered" loading="lazy"
             style="height:80px; width:80px; object-fit:contain; margin:0 auto; display:block;"></div>
         <h3>Community Powered</h3>
         <p class="subtext">Built by degenerates, for degenerates. Every holder gets a virtual head pat.</p>
       </div>
       <div class="card">
-        <div class="icon"> <img src="./Src/Pure_meme_energy.png" alt="Pure_meme_energy.png"
+        <div class="icon"> <img src="./Src/Pure_meme_energy.png" alt="Pure_meme_energy.png" loading="lazy"
             style="height:80px; width:80px; object-fit:contain; margin:0 auto; display:block;"></div>
         <h3>Pure Meme Energy</h3>
         <p class="subtext">100% organic, free-range internet chaos. No artificial utility added.</p>
@@ -948,7 +138,7 @@
     </div>
   </section>
 
-  <!-- ================= TOKENOMICS ================= -->
+  
   <section id="token" style="background:#000;">
     <div class="section-head">
       <span class="eyebrow subtext">TOKENOMICS</span>
@@ -957,25 +147,25 @@
     </div>
     <div class="grid-4">
       <div class="tok-card">
-        <div class="icon"><img src="./Src/Total_supply.png" alt="Total_supply"
+        <div class="icon"><img src="./Src/Total_supply.png" alt="Total_supply" loading="lazy"
             style="height:80px; width:80px; object-fit:contain; display:block; margin:0 auto;"></div>
         <div class="value">1,000,000,000</div>
         <div class="label subtext">Total Supply</div>
       </div>
       <div class="tok-card">
-        <div class="icon"><img src="./Src/Fair_launch.png" alt="Fair_launch"
+        <div class="icon"><img src="./Src/Fair_launch.png" alt="Fair_launch" loading="lazy"
             style="height:80px; width:80px; object-fit:contain; display:block; margin:0 auto;"></div>
         <div class="value">100%</div>
         <div class="label subtext">Fair Launch</div>
       </div>
       <div class="tok-card">
-        <div class="icon"><img src="./Src/No_tax.png" alt="No_tax"
+        <div class="icon"><img src="./Src/No_tax.png" alt="No_tax" loading="lazy"
             style="height:80px; width:80px; object-fit:contain; display:block; margin:0 auto;"></div>
         <div class="value">0% / 0%</div>
         <div class="label subtext">No Tax</div>
       </div>
       <div class="tok-card">
-        <div class="icon"><img src="./Src/Community_driven.png" alt="Community_driven"
+        <div class="icon"><img src="./Src/Community_driven.png" alt="Community_driven" loading="lazy"
             style="height:80px; width:80px; object-fit:contain; display:block; margin:0 auto;">
         </div>
         <div class="value">Renounced</div>
@@ -984,7 +174,7 @@
     </div>
   </section>
 
-  <!-- ================= ROADMAP ================= -->
+  
   <section id="roadmap">
     <div class="section-head">
       <span class="eyebrow subtext">THE MASTER PLAN</span>
@@ -993,25 +183,25 @@
     </div>
     <div class="roadmap-track">
       <div class="road-stop">
-        <div class="road-badge"><img src="./Src/Become_meme.png" alt="Become Meme"
+        <div class="road-badge"><img src="./Src/Become_meme.png" alt="Become Meme" loading="lazy"
             style="height:90%; width:90%; object-fit:contain; margin:auto; display:block;"></div>
         <h3>Become Meme</h3>
         <p class="subtext">Hatch the legend. Deploy the fluff. Post the first meow.</p>
       </div>
       <div class="road-stop">
-        <div class="road-badge"><img src="./Src/Go_viral.png" alt="Go Viral"
+        <div class="road-badge"><img src="./Src/Go_viral.png" alt="Go Viral" loading="lazy"
             style="height:70%; width:70%; object-fit:contain;"></div>
         <h3>Go Viral</h3>
         <p class="subtext">Timeline domination. Every feed, one fluffy face.</p>
       </div>
       <div class="road-stop">
-        <div class="road-badge"><img src="./Src/Dominate_ct.png" alt="Dominate CT"
+        <div class="road-badge"><img src="./Src/Dominate_ct.png" alt="Dominate CT" loading="lazy"
             style="height:90%; width:90%; object-fit:contain; margin:auto; display:block;"></div>
         <h3>Dominate CT</h3>
         <p class="subtext">Crypto X/Twitter bends the knee to the pompom.</p>
       </div>
       <div class="road-stop">
-        <div class="road-badge"><img src="./Src/Moon_together.png" alt="Moon"
+        <div class="road-badge"><img src="./Src/Moon_together.png" alt="Moon" loading="lazy"
             style="height:80px; width:80px; object-fit:contain;"></div>
         <h3>Moon Together</h3>
         <p class="subtext">Zero utility, full send. We meow all the way up.</p>
@@ -1019,7 +209,7 @@
     </div>
   </section>
 
-  <!-- ================= COMMUNITY ================= -->
+  
   <section id="community">
     <div class="section-head">
       <span class="eyebrow subtext">COME SAY HI</span>
@@ -1107,7 +297,7 @@
     </div>
   </section>
 
-  <!-- ================= FINAL CTA ================= -->
+  
   <section class="final-cta">
     <h2 class="subtext">Ready to join the paw-ty?</h2>
     <button class="btn-final" onclick="buyNow()">BUY $POMPOMCAT <img
@@ -1129,92 +319,7 @@
       Buy for fun, not for utility. DYOR.</p>
   </footer>
 
-  <script>
-    /* ===== CA CONFIG =====
-       This is the ONLY place you need to edit.
-       1. Set CA_LIVE to true once the token is launched
-       2. Paste the real contract address into CA_ADDRESS
-       Every buy button, the Pump.fun link, and the DexScreener link
-       all update automatically from this single value. */
-    const CA_LIVE = false;
-    const CA_ADDRESS = "TBA";
-
-    const PUMPFUN_URL = `https://pump.fun/coin/${CA_ADDRESS}`;
-    const DEXSCREENER_URL = `https://dexscreener.com/solana/${CA_ADDRESS}`;
-
-    function buyNow() {
-      window.location.href = PUMPFUN_URL;
-    }
-
-    function initCA() {
-      const badge = document.getElementById('liveBadge');
-      const caText = document.getElementById('caText');
-      const pumpLink = document.getElementById('pumpfunLink');
-      const dexLink = document.getElementById('dexscreenerLink');
-
-      if (pumpLink) pumpLink.href = PUMPFUN_URL;
-      if (dexLink) dexLink.href = DEXSCREENER_URL;
-
-      if (CA_LIVE) {
-        badge.style.display = 'inline-flex';
-        caText.textContent = CA_ADDRESS;
-      } else {
-        badge.style.display = 'none';
-        caText.textContent = 'CA: Coming Soon';
-      }
-    }
-    initCA();
-
-    function copyCA() {
-      const btn = document.getElementById('caBtn');
-      const caText = document.getElementById('caText');
-      const textToCopy = CA_LIVE ? CA_ADDRESS : caText.textContent.replace(/^CA:\s*/, '');
-
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        btn.classList.add('copied');
-        setTimeout(() => {
-          btn.classList.remove('copied');
-        }, 1500);
-      });
-    }
-
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      const nav = document.getElementById('navLinks');
-      const open = nav.style.display === 'flex';
-      nav.style.display = open ? 'none' : 'flex';
-      nav.style.position = 'absolute'; nav.style.top = '72px'; nav.style.right = '24px';
-      nav.style.background = 'rgba(0,0,0,0.97)'; nav.style.border = '1px solid #f97316';
-      nav.style.flexDirection = 'column'; nav.style.padding = '22px 30px'; nav.style.borderRadius = '16px';
-      nav.style.gap = '18px';
-    });
-
-    /* Marquee slogans */
-    const slogans = [
-      "NO UTILITY. JUST UNLIMITED MEOWS. 🐾",
-      "BORN TO MEOW. BUILT TO MOON. 🚀",
-      "100% FLUFF. 0% BRAINCELLS. ☁️",
-      "EVERY PUMP DESERVES A POMPOM. 🐱",
-      "TOUCH GRASS? WE'D RATHER CHASE YARN. 🧶",
-      "POWERED BY CATNIP & COMMUNITY. ✨"
-    ];
-    const track = document.getElementById('marqueeTrack');
-    const full = [...slogans, ...slogans];
-    track.innerHTML = full.map(s => `<span>${s}</span>`).join('<span>•</span>');
-
-    /* Floating bg emojis in hero */
-    const bgIcons = ['🐾', '🪙', '⭐', '🧶', '🐟', '✨'];
-    const bgDrift = document.getElementById('bgDrift');
-    for (let i = 0; i < 16; i++) {
-      const el = document.createElement('span');
-      el.textContent = bgIcons[Math.floor(Math.random() * bgIcons.length)];
-      el.style.left = Math.random() * 100 + '%';
-      el.style.top = Math.random() * 100 + '%';
-      el.style.fontSize = (16 + Math.random() * 20) + 'px';
-      el.style.animationDelay = (Math.random() * 5) + 's';
-      el.style.animationDuration = (7 + Math.random() * 6) + 's';
-      bgDrift.appendChild(el);
-    }
-  </script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
