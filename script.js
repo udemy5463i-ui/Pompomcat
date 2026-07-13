@@ -43,12 +43,17 @@ function copyCA() {
 
 document.querySelector('.menu-toggle').addEventListener('click', () => {
   const nav = document.getElementById('navLinks');
+  const navBar = document.querySelector('nav');
   const open = nav.style.display === 'flex';
   nav.style.display = open ? 'none' : 'flex';
-  nav.style.position = 'absolute'; nav.style.top = '72px'; nav.style.right = '24px';
+  const navRect = navBar.getBoundingClientRect();
+  nav.style.position = 'absolute';
+  nav.style.top = navRect.height + 'px';
+  nav.style.right = '14px';
+  nav.style.left = '14px';
   nav.style.background = 'rgba(0,0,0,0.97)'; nav.style.border = '1px solid #f97316';
-  nav.style.flexDirection = 'column'; nav.style.padding = '22px 30px'; nav.style.borderRadius = '16px';
-  nav.style.gap = '18px';
+  nav.style.flexDirection = 'column'; nav.style.padding = '18px 20px'; nav.style.borderRadius = '16px';
+  nav.style.gap = '16px';
 });
 
 
