@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>POMPOMCAT 🐱🎀 | The Internet's Fluffiest Meme Coin</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comic+Neue:wght@400;700&display=swap');
@@ -1125,13 +1130,17 @@
   </footer>
 
   <script>
+    function buyNow() {
+      alert("🚀 Redirecting to buy $POMPOMCAT...\n\nPaste your DEX / Pump.fun link here!");
+    }
+
     /* ===== CA CONFIG =====
        When your token is live, just:
        1. Set CA_LIVE to true
        2. Paste your real contract address into CA_ADDRESS
        That's it — the badge + button update automatically. */
-    const CA_LIVE = true;
-    const CA_ADDRESS = "231879321heui1hdi12di1bdg1idg1";
+    const CA_LIVE = false;
+    const CA_ADDRESS = "PASTE_CONTRACT_ADDRESS_HERE";
 
     function initCA() {
       const badge = document.getElementById('liveBadge');
