@@ -1049,7 +1049,7 @@
           </svg></div>
         <h3>Telegram</h3>
         <p class="subtext">Where the real meows happen</p>
-        <a href="#" class="comm-link">Join Chat</a>
+        <a href="https://t.me/pompomcat41" target="_blank" class="comm-link">Join Chat</a>
       </div>
       <div class="card">
         <div class="comm-icon"><svg style="display:block; margin:0 auto;" xmlns="http://www.w3.org/2000/svg"
@@ -1064,7 +1064,7 @@
           </svg></div>
         <h3>X/Twitter</h3>
         <p class="subtext">Memes, updates &amp; chaos daily</p>
-        <a href="#" class="comm-link">Follow Us</a>
+        <a href="https://x.com/catnipdev" target="_blank" class="comm-link">Follow Us</a>
       </div>
       <div class="card">
         <div class="comm-icon"><svg style="display:block; margin:0 auto;" height="48" width="48" viewBox="0 0 200 200"
@@ -1087,7 +1087,7 @@
           </svg></div>
         <h3>Pump.fun</h3>
         <p class="subtext">Where the fluff was born</p>
-        <a href="https://pump.fun/coin/J9xZJtUGU1LRzHPpUfVtJ7p5VMnK14DunPn55PdFpump" class="comm-link">View Token</a>
+        <a href="#" id="pumpfunLink" class="comm-link" target="_blank" rel="noopener">View Token</a>
       </div>
       <div class="card">
         <div class="comm-icon"><svg style="display:block; margin:0 auto;" xmlns="http://www.w3.org/2000/svg" width="48"
@@ -1102,7 +1102,7 @@
           </svg></div>
         <h3>DexScreener</h3>
         <p class="subtext">Watch the chart go brrr</p>
-        <a href="#" class="comm-link">Track Chart</a>
+        <a href="#" id="dexscreenerLink" class="comm-link" target="_blank" rel="noopener">Track Chart</a>
       </div>
     </div>
   </section>
@@ -1130,21 +1130,31 @@
   </footer>
 
   <script>
-    function buyNow() {
-      alert("🚀 Redirecting to buy $POMPOMCAT...\n\nPaste your DEX / Pump.fun link here!");
-    }
-
     /* ===== CA CONFIG =====
-       When your token is live, just:
-       1. Set CA_LIVE to true
-       2. Paste your real contract address into CA_ADDRESS
-       That's it — the badge + button update automatically. */
+       This is the ONLY place you need to edit.
+       1. Set CA_LIVE to true once the token is launched
+       2. Paste the real contract address into CA_ADDRESS
+       Every buy button, the Pump.fun link, and the DexScreener link
+       all update automatically from this single value. */
     const CA_LIVE = false;
-    const CA_ADDRESS = "PASTE_CONTRACT_ADDRESS_HERE";
+    const CA_ADDRESS = "Coming Soon";
+
+    const PUMPFUN_URL = `https://pump.fun/coin/${CA_ADDRESS}`;
+    const DEXSCREENER_URL = `https://dexscreener.com/solana/${CA_ADDRESS}`;
+
+    function buyNow() {
+      window.open(PUMPFUN_URL, "_blank", "noopener");
+    }
 
     function initCA() {
       const badge = document.getElementById('liveBadge');
       const caText = document.getElementById('caText');
+      const pumpLink = document.getElementById('pumpfunLink');
+      const dexLink = document.getElementById('dexscreenerLink');
+
+      if (pumpLink) pumpLink.href = PUMPFUN_URL;
+      if (dexLink) dexLink.href = DEXSCREENER_URL;
+
       if (CA_LIVE) {
         badge.style.display = 'inline-flex';
         caText.textContent = CA_ADDRESS;
